@@ -13,6 +13,7 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // courseJdbcRepository.insert();
+        // Insert Data
         courseJdbcRepository.insert(new Course(
                 1L, "Learn Spring Boot", "John Doe"
                 )
@@ -29,5 +30,8 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
                 4L, "Learn Spring CLOUD", "John Doe"
                 )
         );
+
+        // Delete Data
+        courseJdbcRepository.deleteById(4L);
     }
 }

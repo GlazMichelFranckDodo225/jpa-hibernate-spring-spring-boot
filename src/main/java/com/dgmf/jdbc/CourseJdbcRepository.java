@@ -23,6 +23,12 @@ public class CourseJdbcRepository {
                 values (?, ?, ?);
             """;
 
+    // Deleting Data using Spring JDBC
+    private String DELETE_QUERY =
+            """
+                DELETE FROM course WHERE id = ?;
+            """;
+
     /*public void insert() {
         springJdbcTemplate.update(INSERT_QUERY);
     }*/
@@ -32,5 +38,9 @@ public class CourseJdbcRepository {
                 INSERT_QUERY,
                 course.getId(), course.getName(), course.getAuthor()
         );
+    }
+
+    public void deleteById(Long id) {
+        springJdbcTemplate.update(DELETE_QUERY, id);
     }
 }
