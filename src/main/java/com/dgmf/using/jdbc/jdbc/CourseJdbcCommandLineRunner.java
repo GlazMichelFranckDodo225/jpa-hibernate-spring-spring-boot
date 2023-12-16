@@ -1,6 +1,6 @@
-package com.dgmf.jdbc;
+package com.dgmf.using.jdbc.jdbc;
 
-import com.dgmf.entity.Course;
+import com.dgmf.using.jdbc.entity.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

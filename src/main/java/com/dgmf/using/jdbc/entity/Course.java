@@ -1,4 +1,4 @@
-package com.dgmf.entity;
+package com.dgmf.using.jdbc.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
