@@ -2,6 +2,7 @@ package com.dgmf.jdbc;
 
 import com.dgmf.entity.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -29,6 +30,12 @@ public class CourseJdbcRepository {
                 DELETE FROM course WHERE id = ?;
             """;
 
+    // Selecting Data using Spring JDBC
+    private String SELECT_QUERY =
+            """
+                SELECT * FROM course WHERE id = ?;
+            """;
+
     /*public void insert() {
         springJdbcTemplate.update(INSERT_QUERY);
     }*/
@@ -42,5 +49,15 @@ public class CourseJdbcRepository {
 
     public void deleteById(Long id) {
         springJdbcTemplate.update(DELETE_QUERY, id);
+    }
+
+    public Course findById(Long id) {
+        Course course = springJdbcTemplate.queryForObject(
+                SELECT_QUERY,
+                new BeanPropertyRowMapper<>(Course.class),
+                id
+        );
+
+        return course;
     }
 }

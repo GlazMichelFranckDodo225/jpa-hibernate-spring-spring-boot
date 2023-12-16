@@ -33,5 +33,10 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
 
         // Delete Data
         courseJdbcRepository.deleteById(4L);
+
+        // Select Data
+        System.out.println(courseJdbcRepository.findById(1L));
+        System.out.println(courseJdbcRepository.findById(2L));
+        System.out.println(courseJdbcRepository.findById(3L));
     }
 }
