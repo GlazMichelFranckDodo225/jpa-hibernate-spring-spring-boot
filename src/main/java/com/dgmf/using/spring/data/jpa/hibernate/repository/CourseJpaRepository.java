@@ -7,6 +7,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
+// Using JPA
 @Repository
 @Transactional // To execute Queries with JPA
 public class CourseJpaRepository {
