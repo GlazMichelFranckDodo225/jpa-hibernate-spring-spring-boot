@@ -1,6 +1,6 @@
-package com.dgmf.using.spring.jdbc.jdbc;
+package com.dgmf.using.jdbc.jdbc;
 
-import com.dgmf.using.spring.jdbc.entity.Course;
+import com.dgmf.using.jdbc.entity.CourseJdbc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -40,7 +40,7 @@ public class CourseJdbcRepository {
         springJdbcTemplate.update(INSERT_QUERY);
     }*/
 
-    public void insert(Course course) {
+    public void insert(CourseJdbc course) {
         springJdbcTemplate.update(
                 INSERT_QUERY,
                 course.getId(), course.getName(), course.getAuthor()
@@ -51,10 +51,10 @@ public class CourseJdbcRepository {
         springJdbcTemplate.update(DELETE_QUERY, id);
     }
 
-    public Course findById(Long id) {
-        Course course = springJdbcTemplate.queryForObject(
+    public CourseJdbc findById(Long id) {
+        CourseJdbc course = springJdbcTemplate.queryForObject(
                 SELECT_QUERY,
-                new BeanPropertyRowMapper<>(Course.class),
+                new BeanPropertyRowMapper<>(CourseJdbc.class),
                 id
         );
 

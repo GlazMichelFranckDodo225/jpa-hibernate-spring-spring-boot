@@ -1,12 +1,16 @@
-package com.dgmf.using.spring.jdbc.entity;
+package com.dgmf.using.jpa.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
-public class Course {
+@Entity
+public class CourseJpa {
+    @Id
     private Long id;
     private String name;
     private String author;

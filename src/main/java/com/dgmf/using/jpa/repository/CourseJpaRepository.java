@@ -1,6 +1,6 @@
-package com.dgmf.using.spring.data.jpa.hibernate.repository;
+package com.dgmf.using.jpa.repository;
 
-import com.dgmf.using.spring.data.jpa.hibernate.entity.Course;
+import com.dgmf.using.jpa.entity.CourseJpa;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 // import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +15,13 @@ public class CourseJpaRepository {
     private EntityManager entityManager;
 
     // Inserting Data using Spring Data JPA
-    public void insert(Course course) {
+    public void insert(CourseJpa course) {
         entityManager.merge(course);
     }
 
     // Retrieved Data using Spring Data JPA
-    public Course findById(Long id) {
-        Course course = entityManager.find(Course.class, id);
+    public CourseJpa findById(Long id) {
+        CourseJpa course = entityManager.find(CourseJpa.class, id);
 
         return course;
     }
@@ -29,7 +29,7 @@ public class CourseJpaRepository {
     // Deleted Data using Spring Data JPA
     public void deleteById(Long id) {
         // Find Entity
-        Course course = entityManager.find(Course.class, id);
+        CourseJpa course = entityManager.find(CourseJpa.class, id);
 
         // Delete Entity
         entityManager.remove(course);

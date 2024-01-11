@@ -1,12 +1,12 @@
-package com.dgmf.using.spring.data.jpa.hibernate.cmdlinerunner;
+/*package com.dgmf.using.jpa.cmdlinerunner;
 
-import com.dgmf.using.spring.data.jpa.hibernate.repository.CourseJpaRepository;
-import com.dgmf.using.spring.data.jpa.hibernate.entity.Course;
+import com.dgmf.using.jpa.repository.CourseJpaRepository;
+import com.dgmf.using.jpa.entity.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Component;*/
 
-@Component
+/*@Component
 public class CourseJpaCommandLineRunner implements CommandLineRunner {
     @Autowired
     private CourseJpaRepository courseJpaRepository;
@@ -39,4 +39,4 @@ public class CourseJpaCommandLineRunner implements CommandLineRunner {
         System.out.println(courseJpaRepository.findById(2L));
         System.out.println(courseJpaRepository.findById(3L));
     }
-}
+}*/
